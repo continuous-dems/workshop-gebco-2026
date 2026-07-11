@@ -30,7 +30,6 @@ authors:
 :::{tip} Learning Objectives
 - Learn how to access and use CryoCloud
 - Start a Jupyter server in CryoCloud
-- Clone the repository for this workshop website
 :::
 
 
@@ -210,38 +209,6 @@ After the image is built once, you can easily select it again in future sessions
 Follow the instructions in our reference page [](/reference/01-starting-your-server.md)
 to start a server on CryoCloud using the official workshop image!
 
-
-## Task: Clone the workshop website
-
-We will clone (i.e. make a local copy of) the [workshop repository](https://github.com/geojupyter/workshop-open-source-geospatial.git).
-
-To do this:
-1. Select the plus (`+`) sign above the `File Browser` to the left, which will bring up a `Launcher` window.
-
-2. Click the `terminal` button under Other to open it.
-   This is your command line like you would have on any computer.
-
-   Before cloning the repo, you have the option to switch to another file folder using
-   the _change directory_ terminal command: `cd folder` if you do not want the workshop
-   repo in your current directory (you can check which directory you are currently in
-   using _print working directory_ command: `pwd`).
-
-   ```
-   cd yourfoldername
-   ```
-
-3. Now clone the workshop code into your current directory:
-
-   ```
-   git clone https://github.com/geojupyter/workshop-open-source-geospatial.git
-   ```
-
-4. You will see the folder pop into your `File Browser` on the left if you have the current directory open.
-   Click on the folder to navigate through the files.
-
-5. To open this tutorial, click on the `materials` subdirectory > `01-working-in-jupyterhub` and double
-   click on `index.md`.
-   This should open up this tutorial in case you want to review it in the future.
 
 ---
 
