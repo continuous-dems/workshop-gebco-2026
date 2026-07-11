@@ -5,5 +5,5 @@ A term
 : A Definition.
 
 Another term
-: Like the {term}`first time <A term>`.
+: Like the {term}`first term <A term>`.
 :::
