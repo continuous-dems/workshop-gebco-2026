@@ -29,13 +29,8 @@ pixi run preview
 ```
 
 
-### Writing: quality, voice, style, formatting, andragogy, ?
+### Style guide
 
-Reference [diataxis](https://diataxis.fr/) for quality guidance.
-
-Understand your audience. Which of the
-[four kinds of documentation](https://diataxis.fr/start-here/#the-four-kinds-of-documentation)
-are you writing?
-
-* [Learning-oriented tutorial](https://diataxis.fr/tutorials/)
-* [Understanding-oriented explanation](https://diataxis.fr/explanation/)
+View our
+[style guide](https://continuous-dems.github.io/workshop-gebco-2026/for-instructors/style-guide/)
+for tips for high quality and consistent writing style.
