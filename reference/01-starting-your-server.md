@@ -17,6 +17,12 @@ you'll be presented with a screen like this:
 Instead of filling out this form,
 [click here to open the same page with the form pre-filled with the correct options](https://hub.cryointhecloud.com/hub/spawn#fancy-forms-config={%22profile%22:%22cpu-only%22,%22image%22:%22unlisted_choice%22,%22image:unlisted_choice%22:%22ghcr.io/continuous-dems/cudem-jupyter:workshop-gebco-2026%22,%22resource_allocation%22:%22mem_7_gb%22,%22resource_allocation:unlisted_choice%22:%22%22})
 
+For reference, the correct values are:
+
+* **Environment**: "Other..."
+* **Custom image**: `ghcr.io/continuous-dems/cudem-jupyter:workshop-gebco-2026`
+* **Resource allocation**: "~7GB RAM, ~0.9 CPUs"
+
 :::{important}
 It's critical to only allocate the resources you need so that CryoCloud can sustain its
 operations!
