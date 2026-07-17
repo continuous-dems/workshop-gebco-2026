@@ -2,9 +2,9 @@
 
 All workshop materials are available on this website.
 
-**What:** Generating Coastal DEMs: From Data Discovery to Validation   
-**When:** Monday, July 20, 2026 and Tuesday, July 21, 2026 from 8:30 AM - 3:00 PM
-**Where:** NOAA/NCEI Boulder, CO (Virtual information needed to join will be shared by email)
+**What:** Generating Coastal DEMs: From Data Discovery to Validation  
+**When:** Monday, July 20, 2026 and Tuesday, July 21, 2026, 8:30 AM–3:00 PM  
+**Where:** NOAA/NCEI Boulder, CO. Virtual joining information will be shared by email.
 
 ## Workshop abstract
 
