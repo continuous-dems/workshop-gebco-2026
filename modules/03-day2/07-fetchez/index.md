@@ -2,6 +2,55 @@
 title: "7 - Data Discovery with fetchez"
 ---
 
+# Module Overview: Data Discovery with `fetchez`
+
+`fetchez` is the CUDEM data discovery and access tool. It helps users query, filter, cache, stream, and download source datasets through a standardized command-line interface.
+
+In a coastal DEM workflow, `fetchez` helps answer questions such as:
+
+- What source data are available in this region?
+- Which datasets overlap the area of interest?
+- Can the results be filtered by source type, year, provider, or data class?
+- Can only the required data be downloaded?
+- How should a source and its processing settings be represented in YAML?
+
+Run the basic help command:
+
+```bash
+fetchez --help
+```
+
+List available source modules:
+
+```bash
+fetchez modules list
+```
+
+Inspect the module commands:
+
+```bash
+fetchez modules --help
+```
+
+Search available modules by keyword:
+
+```bash
+fetchez modules search topography
+fetchez modules search bathymetry
+```
+
+Inspect a specific source module:
+
+```bash
+fetchez modules info mbdb
+```
+
+The main concept is that data discovery should be simple and programmatically accessible. Instead of manually downloading files from many different websites, `fetchez` provides a common interface for accessing more than 75 source types as part of a larger workflow or as a standalone data-acquisition tool.
+
+The `fetchez` exercise also introduces the YAML structure used to represent source modules, module arguments, hooks, weights, and cache settings. These same components later appear inside the workflows coordinated by `globato`.
+
+---
+
 `fetchez` is organized around a few core concepts:
 
 ```text

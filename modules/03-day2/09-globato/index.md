@@ -2,9 +2,9 @@
 title: "9 - DEM Workflows with globato"
 ---
 
-`globato` connects the CUDEM workflow. It combines `fetchez` for data discovery, access, and source-level preparation; `transformez` for vertical datum transformation; and CUDEM tools for source filtering, weighting, stacking, interpolation, and output generation.
+`globato` connects the CUDEM workflow. It combines `fetchez` for data discovery, access, and source-level preparation; `transformez` for vertical datum and reference-frame transformation; and CUDEM tools for source filtering, weighting, stacking, interpolation, and output generation.
 
-The result is a reproducible, recipe-based process that transforms diverse source datasets into a commonly referenced, composite DEM.
+The result is a reproducible, recipe-based process that transforms diverse source datasets into a commonly referenced, composite DEM. It turns DEM building into a workflow that can be exported, inspected, modified, shared, rerun, and version-controlled.
 
 In Day 1, we generated the Fiji test DEM and reviewed the YAML recipe used to define the workflow. In Day 2, we will focus on two primary `globato` commands:
 
@@ -19,6 +19,8 @@ The main concept is:
 build = define a DEM workflow using command-line options
 run   = execute a saved YAML recipe
 ```
+
+`globato` can also draw on module bundles that collect multiple source modules and their default settings under a single name, covered in the **Module Bundles** section below.
 
 ---
 
@@ -254,58 +256,40 @@ This makes a saved recipe reusable across different regions, resolutions, and ou
 
 ---
 
-# Run a Custom Region
+# Inspect the Output
 
-For the hands-on custom-region exercise, choose a small coastal area and apply the same workflow pattern.
-
-## Step 1: Export the Custom Recipe
-
-General command:
+After the recipe finishes, inspect the DEM metadata:
 
 ```bash
-globato cudem build -R WEST/EAST/SOUTH/NORTH -E 3s -O custom_test -P epsg:4326+3855 -X 0:5 global-bathy-topo --export
+gdalinfo fiji_test_final.tif
 ```
 
-Replace:
+Useful information in the `gdalinfo` output includes:
 
-```text
-WEST/EAST/SOUTH/NORTH
-```
+- Driver
+- Raster size
+- Coordinate system
+- Origin
+- Pixel size
+- Corner coordinates
+- Band information
+- NoData value
+- Minimum and maximum values
 
-with the selected coastal region.
+## Create a Hillshade
 
-Example using the Fiji region:
+Create a quick visual-inspection product using `globato perspecto`:
 
 ```bash
-globato cudem build -R 178.25/178.65/-18.30/-17.95 -E 3s -O custom_test -P epsg:4326+3855 -M ms_binary_cudem:algos=interp_gmt -X 0:5 global-bathy-topo --export
+globato perspecto hillshade fiji_test_final.tif fiji_test_hillshade.tif
 ```
 
-Expected recipe output:
+This creates a georeferenced hillshade that can be used for visual inspection without opening an external GIS application.
 
-```text
-custom_test_recipe.yaml
-```
-
-Open the exported recipe in a text editor and compare it with the Fiji recipe from Day 1.
-
-## Step 2: Run the Custom Recipe
-
-Run:
+Optional hillshade settings:
 
 ```bash
-globato cudem run custom_test_recipe.yaml
-```
-
-Expected final DEM:
-
-```text
-custom_test_final.tif
-```
-
-Check the output:
-
-```bash
-gdalinfo custom_test_final.tif
+globato perspecto hillshade fiji_test_final.tif fiji_test_hillshade.tif --cmap etopo --exag 3 --blend soft_light
 ```
 
 ---
@@ -325,118 +309,6 @@ This adds a 5 percent processing buffer around the specified output region.
 For coastal DEM generation, the buffer can help reduce edge effects by including additional source data beyond the final DEM boundary. These surrounding data provide better support for interpolation near the edge of the requested output area.
 
 The processing region is extended, but the final DEM remains associated with the requested output extent.
-
----
-
-# Inspect the Output
-
-After the recipe finishes, inspect the DEM metadata:
-
-```bash
-gdalinfo custom_test_final.tif
-```
-
-Useful information in the `gdalinfo` output includes:
-
-- Driver
-- Raster size
-- Coordinate system
-- Origin
-- Pixel size
-- Corner coordinates
-- Band information
-- NoData value
-- Minimum and maximum values
-
----
-
-## Create a Hillshade
-
-Create a quick visual-inspection product using `globato perspecto`:
-
-```bash
-globato perspecto hillshade custom_test_final.tif custom_test_hillshade.tif
-```
-
-For the Fiji example:
-
-```bash
-globato perspecto hillshade fiji_test_final.tif fiji_test_hillshade.tif
-```
-
-This creates a georeferenced hillshade that can be used for visual inspection without opening an external GIS application.
-
-Optional hillshade settings:
-
-```bash
-globato perspecto hillshade custom_test_final.tif custom_test_hillshade.tif --cmap etopo --exag 3 --blend soft_light
-```
-
----
-
-## Basic Visual Checks
-
-Review the DEM and hillshade using the following questions:
-
-- Does the DEM cover the expected region?
-- Are land and water in the correct locations?
-- Are elevations generally positive on land?
-- Are underwater elevations generally negative?
-- Are there missing-data areas?
-- Are there obvious artifacts near the coastline?
-- Are there interpolation artifacts or unexpected surface patterns?
-- Does the hillshade show reasonable terrain and bathymetric structure?
-
-This is not a full validation step. The goal is basic output review and quality-control thinking using tools available within the workshop environment.
-
----
-
-# Modify One Thing
-
-After the first custom run, modify one part of the command or recipe.
-
-## Change the Region
-
-Export a new recipe using a different bounding box:
-
-```bash
-globato cudem build -R WEST/EAST/SOUTH/NORTH -E 3s -O custom_region_v2 -P epsg:4326+3855 -M ms_binary_cudem:algos=interp_gmt -X 0:5 global-bathy-topo --export
-```
-
-Then run it:
-
-```bash
-globato cudem run custom_region_v2_recipe.yaml
-```
-
-## Change the Resolution
-
-Export a 1-arc-second version:
-
-```bash
-globato cudem build -R 178.25/178.65/-18.30/-17.95 -E 1s -O fiji_test_1s -P epsg:4326+3855 -M ms_binary_cudem:algos=interp_gmt -X 0:5 global-bathy-topo --export
-```
-
-Run the exported recipe:
-
-```bash
-globato cudem run fiji_test_1s_recipe.yaml
-```
-
-Alternatively, override the saved Fiji recipe:
-
-```bash
-globato cudem run fiji_test_recipe.yaml -E 1s -O fiji_test_1s
-```
-
-Compare the outputs:
-
-```bash
-gdalinfo fiji_test_final.tif
-gdalinfo fiji_test_1s_final.tif
-```
-
-The goal is not to produce a perfect DEM. The goal is to understand how changes to the region, resolution, sources, and workflow settings affect the resulting output.
 
 ---
 

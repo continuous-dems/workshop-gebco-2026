@@ -2,7 +2,7 @@
 title: "8 - Vertical Transformation with transformez"
 ---
 
-`transformez` supports vertical datum and reference-frame transformation workflows. In coastal DEM development, this is important because topographic and bathymetric datasets often come from different sources and may use different vertical references.
+`transformez` supports vertical datum and reference-frame transformation workflows. In coastal DEM development, vertical consistency is critical because topographic and bathymetric datasets often come from different sources and may use different vertical references.
 
 A coastal DEM may combine data referenced to:
 
@@ -14,9 +14,9 @@ A coastal DEM may combine data referenced to:
 - Local tidal datums
 - Chart datums
 
-`transformez` can generate vertical shift grids or apply vertical datum transformations to existing raster datasets. This allows source data to be moved into a common vertical reference before they are used in a DEM workflow.
+`fetchez` can prepare source data through hooks such as cropping, filtering, datatype assignment, and horizontal reprojection. `transformez` focuses on the vertical component: it generates vertical shift grids or applies vertical datum transformations to existing rasters, moving source elevations and depths into a common vertical reference before they are used in a DEM workflow.
 
-During this workshop, the main goal is to understand where `transformez` fits into the CUDEM workflow. We will not cover every vertical datum case in detail.
+The main concept is that datasets cannot be compiled reliably into one coastal DEM until their elevation and depth values are referenced consistently. During this workshop, the goal is to understand where `transformez` fits into the CUDEM workflow rather than to cover every vertical datum case in detail.
 
 ---
 
