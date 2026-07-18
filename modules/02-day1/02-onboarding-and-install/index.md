@@ -165,7 +165,71 @@ chmod 600 ~/.netrc
 
 ---
 
-## 6. Run Setup Checks
+## 6. (Optional) NASA EarthData Credentials
+
+The `ivert` tool uses NASA's EarthData tools to fetch and subset ICESat-2 data. We will provide some pre-computed data for use during the workshop, so this step is optional. However, if you would like to perform your own validations later, you will need to register for a free NASA EarthData account and put your credentials into your `.netrc` file.
+
+Create a free NASA EarthData account:
+
+<https://urs.earthdata.nasa.gov/users/new>
+
+After registering, add an entry to your `.netrc` file so `ivert` can log in on the backend.
+
+### Windows
+
+On Windows, open the `.netrc` file in your user home directory:
+
+```bash
+notepad %USERPROFILE%\.netrc
+```
+
+Add the following entry, replacing `YOUR_USERNAME` and `YOUR_PASSWORD` with your NASA EarthData credentials:
+
+```text
+machine urs.earthdata.nasa.gov
+login YOUR_USERNAME
+password YOUR_PASSWORD
+```
+
+Save and close the file.
+
+Confirm the file exists:
+
+```bash
+dir %USERPROFILE%\.netrc*
+```
+
+If the file was accidentally saved as `.netrc.txt`, rename it to remove the extension:
+
+```bash
+ren %USERPROFILE%\.netrc.txt .netrc
+```
+
+### macOS / Linux
+
+On macOS or Linux, create or edit the `.netrc` file in your home directory:
+
+```bash
+nano ~/.netrc
+```
+
+Add the following entry, replacing `YOUR_USERNAME` and `YOUR_PASSWORD` with your NASA EarthData credentials:
+
+```text
+machine urs.earthdata.nasa.gov
+login YOUR_USERNAME
+password YOUR_PASSWORD
+```
+
+Save the file, then update the file permissions:
+
+```bash
+chmod 600 ~/.netrc
+```
+
+---
+
+## 7. Run Setup Checks
 
 After installation, confirm the environment and tools are working.
 
@@ -206,7 +270,7 @@ If these commands print help text, the environment is ready for the Fiji test DE
 
 ---
 
-## 7. Next Step
+## 8. Next Step
 
 Once everyone has a working `cudem` environment, we will move to the Fiji test DEM exercise.
 
