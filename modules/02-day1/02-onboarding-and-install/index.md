@@ -177,13 +177,13 @@ After registering, add an entry to your `.netrc` file so `ivert` can log in on t
 
 ### Windows
 
-On Windows, open the `.netrc` file in your user home directory:
+On Windows, open the `.netrc` file again in your user home directory:
 
 ```bash
 notepad %USERPROFILE%\.netrc
 ```
 
-Add the following entry, replacing `YOUR_USERNAME` and `YOUR_PASSWORD` with your NASA EarthData credentials:
+Add the following entry, replacing `YOUR_USERNAME` and `YOUR_PASSWORD` with your NASA EarthData credentials. This can go immediately after your Copernicus Marine entry from above:
 
 ```text
 machine urs.earthdata.nasa.gov
@@ -193,18 +193,6 @@ password YOUR_PASSWORD
 
 Save and close the file.
 
-Confirm the file exists:
-
-```bash
-dir %USERPROFILE%\.netrc*
-```
-
-If the file was accidentally saved as `.netrc.txt`, rename it to remove the extension:
-
-```bash
-ren %USERPROFILE%\.netrc.txt .netrc
-```
-
 ### macOS / Linux
 
 On macOS or Linux, create or edit the `.netrc` file in your home directory:
@@ -213,20 +201,13 @@ On macOS or Linux, create or edit the `.netrc` file in your home directory:
 nano ~/.netrc
 ```
 
-Add the following entry, replacing `YOUR_USERNAME` and `YOUR_PASSWORD` with your NASA EarthData credentials:
+Add the following entry, replacing `YOUR_USERNAME` and `YOUR_PASSWORD` with your NASA EarthData credentials. This can go immediately after your Copernicus Marine entry from above:
 
 ```text
 machine urs.earthdata.nasa.gov
 login YOUR_USERNAME
 password YOUR_PASSWORD
 ```
-
-Save the file, then update the file permissions:
-
-```bash
-chmod 600 ~/.netrc
-```
-
 ---
 
 ## 7. Run Setup Checks
