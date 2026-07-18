@@ -18,7 +18,13 @@ project:
     - pattern: "0*.md"
     - title: "Modules"
       children:
-        - pattern: "modules/0*/index.{md,ipynb}"
+        - file: "modules/01-working-in-jupyterhub/index.md"
+        - title: "🗓️ Day 1"
+          children:
+            - pattern: "modules/02-day1/0*/index.{md,ipynb}"
+        - title: "🗓️ Day 2"
+          children:
+            - pattern: "modules/03-day2/0*/index.{md,ipynb}"
     - title: "Reference"
       children:
         - pattern: "reference/*.md"
