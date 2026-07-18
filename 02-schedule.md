@@ -42,11 +42,11 @@ By the end of Day 2, participants should understand how to validate a DEM with `
 |---|---|---|
 | 9:00 AM–9:30 AM | Introduction to `ivert` | Review the purpose of independent DEM validation, required inputs, and expected outputs. |
 | 9:30 AM–10:20 AM | Fiji `ivert` Validation | Run the Fiji test DEM through the `ivert` validation workflow. Filter results. Learn how to set up custom validations in ivert. |
-| 10:20 AM–10:30 AM | Take a Break | Stretch the legs, use the facilities. |
+| 10:20 AM–10:30 AM | Take a Break | Stretch legs, use the facilities. |
 | 10:30–11:00 AM | Data Discovery with `fetchez` | Review source modules, arguments, hooks, streams, and source-level preprocessing. |
 | 11:00–11:30 PM | Vertical Harmonization with `transformez` | Review vertical datums, reference frames, harmonization, and shift-grid workflows. |
 | 11:30 AM–1:00 PM | Lunch | offsite |
 | 1:00–2:00 PM | Workflow Synthesis with `globato` | Review how source modules, transformations, stacking, interpolation, and outputs are connected. |
-| 2:00-2:10 PM | Take a Break | Stretch the legs, use the facilities. |
+| 2:00-2:10 PM | Take a Break | Stretch legs, use the facilities. |
 | 2:10–2:50 PM | Custom Region Exercise | Inspect or modify a YAML recipe, run a workflow for another coastal region, and review the outputs. |
 | 2:50–3:00 PM | Workshop Wrap-Up | Review the complete CUDEM workflow and discuss next steps. |
