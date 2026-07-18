@@ -30,9 +30,9 @@ By the end of Day 1, participants should have a working environment, a generated
 
 Day 2 begins with the final stage of the CUDEM workflow: validating the Fiji test DEM generated on Day 1 with `ivert`. We will run the Fiji validation workflow and examine the resulting statistics and plots.
 
-After the IVERT session, we will return to the main CUDEM workflow components. We will review how `fetchez` supports data discovery and source-level processing, how `transformez` supports vertical datum harmonization, and how `globato` connects these pieces into a reproducible DEM-building workflow.
+After the validating the test DEM, we will go through individual module excercises. 
 
-The afternoon will conclude with a custom region exercise. Participants will apply the same concepts to another coastal area, inspect or modify a YAML recipe, run the workflow, and review the resulting outputs.
+The afternoon will conclude with a custom DEM exercise. Participants will apply the same concepts to another coastal area, build a YAML recipe, run the workflow, and review the resulting outputs.
 
 By the end of Day 2, participants should understand how to validate a DEM with `ivert`, interpret validation results, work with the main CUDEM workflow tools, and adapt a recipe-based workflow to a new region.
 
