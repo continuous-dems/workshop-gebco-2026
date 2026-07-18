@@ -2,8 +2,6 @@
 title: "8 - Vertical Transformation with transformez"
 ---
 
-# Module Review: Vertical Transformation with `transformez`
-
 `transformez` supports vertical datum and reference-frame transformation workflows. In coastal DEM development, this is important because topographic and bathymetric datasets often come from different sources and may use different vertical references.
 
 A coastal DEM may combine data referenced to:

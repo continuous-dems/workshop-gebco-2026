@@ -2,8 +2,6 @@
 title: "5 - Deconstruct the Fiji YAML Recipe"
 ---
 
-# Day 1: Deconstruct the Fiji YAML Recipe
-
 After checking the Fiji test DEM outputs, we will open the YAML recipe that defines the DEM workflow and break it down section by section.
 
 The goal is to understand how CUDEM and `globato` use a single recipe file to organize the full DEM-building process.

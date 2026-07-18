@@ -2,10 +2,6 @@
 title: "6 - Workflow Modules and Custom Region DEM"
 ---
 
-# CUDEM Workshop Day 2
-
-## Workflow Modules and Custom Region DEM
-
 Day 2 builds on the Fiji test DEM and YAML walkthrough from Day 1. Now that participants have seen how a complete DEM recipe is structured, the goal is to step through the main workflow tools more directly and then run a custom region using `globato`.
 
 By the end of Day 2, participants should understand how `fetchez`, `transformez`, `globato`, and IVERT fit together in a reproducible coastal DEM workflow. Participants should be able to discover source data, understand vertical transformation needs, run or modify a recipe, inspect generated DEM outputs, and consider basic validation and quality-control questions.

@@ -2,8 +2,6 @@
 title: "2 - Onboarding and Installation"
 ---
 
-# Onboarding and Installation
-
 The first goal of the workshop is to get everyone into a consistent working environment. CUDEM workflows depend on several geospatial and scientific Python libraries, so we want all participants using the same `cudem` conda environment before we begin running DEM examples.
 
 By the end of this section, participants should be able to:
