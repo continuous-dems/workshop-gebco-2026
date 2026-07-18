@@ -1,5 +1,5 @@
 ---
-title: "Day 1: Deconstruct the Fiji YAML Recipe"
+title: "5 - Deconstruct the Fiji YAML Recipe"
 ---
 
 # Day 1: Deconstruct the Fiji YAML Recipe

@@ -1,5 +1,5 @@
 ---
-title: "Onboarding and Installation"
+title: "2 - Onboarding and Installation"
 ---
 
 # Onboarding and Installation

@@ -1,5 +1,5 @@
 ---
-title: "Run the Fiji Test DEM"
+title: "3 - Run the Fiji Test DEM"
 ---
 
 # Run the Fiji Test DEM

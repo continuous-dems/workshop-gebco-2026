@@ -1,5 +1,5 @@
 ---
-title: "DEM Workflows with globato"
+title: "9 - DEM Workflows with globato"
 ---
 
 # Module Review: DEM Workflows with `globato`

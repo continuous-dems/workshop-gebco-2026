@@ -1,5 +1,5 @@
 ---
-title: "Vertical Transformation with transformez"
+title: "8 - Vertical Transformation with transformez"
 ---
 
 # Module Review: Vertical Transformation with `transformez`

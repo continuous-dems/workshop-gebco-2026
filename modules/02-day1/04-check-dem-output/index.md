@@ -1,5 +1,5 @@
 ---
-title: "Check Fiji DEM Outputs"
+title: "4 - Check Fiji DEM Outputs"
 ---
 
 # Check Fiji DEM Outputs

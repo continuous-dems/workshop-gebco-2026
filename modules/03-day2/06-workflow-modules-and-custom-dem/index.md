@@ -1,5 +1,5 @@
 ---
-title: "Day 2: Workflow Modules and Custom Region DEM"
+title: "6 - Workflow Modules and Custom Region DEM"
 ---
 
 # CUDEM Workshop Day 2
