@@ -1,8 +1,6 @@
 ---
-title: "DEM Workflows with globato"
+title: "9 - DEM Workflows with globato"
 ---
-
-# Module Review: DEM Workflows with `globato`
 
 `globato` connects the CUDEM workflow. It combines `fetchez` for data discovery, access, and source-level preparation; `transformez` for vertical datum transformation; and CUDEM tools for source filtering, weighting, stacking, interpolation, and output generation.
 

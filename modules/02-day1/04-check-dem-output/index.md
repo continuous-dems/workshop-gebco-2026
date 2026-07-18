@@ -1,8 +1,6 @@
 ---
-title: "Check Fiji DEM Outputs"
+title: "4 - Check Fiji DEM Outputs"
 ---
-
-# Check Fiji DEM Outputs
 
 After running the Fiji test DEM, we will check the generated outputs. This step confirms that the environment is stable, that the test command completed successfully, and that participants can find and inspect their output files.
 

@@ -1,8 +1,6 @@
 ---
-title: "Data Discovery with fetchez"
+title: "7 - Data Discovery with fetchez"
 ---
-
-# Module Exercise: Data Discovery with `fetchez`
 
 `fetchez` is organized around a few core concepts:
 

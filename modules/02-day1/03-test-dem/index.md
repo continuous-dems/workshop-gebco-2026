@@ -1,8 +1,6 @@
 ---
-title: "Run the Fiji Test DEM"
+title: "3 - Run the Fiji Test DEM"
 ---
-
-# Run the Fiji Test DEM
 
 Once the `cudem` environment is active and the core tools are available, we will run a small Fiji/Suva-area test DEM.
 
