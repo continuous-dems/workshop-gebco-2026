@@ -41,8 +41,8 @@ By the end of Day 2, participants should understand how to validate a DEM with `
 | Time | Topic | Description |
 |---|---|---|
 | 9:00 AM–9:30 AM | Introduction to `ivert` | Review the purpose of independent DEM validation, required inputs, and expected outputs. |
-| 9:30 AM–10:30 AM | Fiji IVERT Validation | Run the Fiji test DEM through the IVERT validation workflow. |
-| 10:30–11:00 AM | Review IVERT Results | Examine validation statistics, plots, bias, spread, outliers, and spatial patterns. |
+| 9:30 AM–10:30 AM | Fiji `ivert` Validation | Run the Fiji test DEM through the `ivert` validation workflow. |
+| 10:30–11:00 AM | Review `ivert` Results | Examine validation statistics, plots, bias, spread, outliers, and spatial patterns. |
 | 11:00–11:30 AM | Data Discovery with `fetchez` | Review source modules, arguments, hooks, streams, and source-level preprocessing. |
 | 11:30 AM–1:00 PM | Lunch | offsite |
 | 1:00–1:30 PM | Vertical Harmonization with `transformez` | Review vertical datums, reference frames, harmonization, and shift-grid workflows. |
