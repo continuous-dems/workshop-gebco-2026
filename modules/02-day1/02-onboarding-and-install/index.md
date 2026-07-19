@@ -165,6 +165,7 @@ chmod 600 ~/.netrc
 
 ---
 
+(nasa-earthdata-credentials)=
 ## 6. (Optional) NASA EarthData Credentials
 
 The `ivert` tool uses NASA's EarthData tools to fetch and subset ICESat-2 data. We will provide some pre-computed data for use during the workshop, so this step is optional. However, if you would like to perform your own validations later, you will need to register for a free NASA EarthData account and put your credentials into your `.netrc` file.
@@ -173,17 +174,17 @@ Create a free NASA EarthData account:
 
 <https://urs.earthdata.nasa.gov/users/new>
 
-After registering, add an entry to your `.netrc` file so `ivert` can log in on the backend.
+When you register, remember the username and password you choose — you will need them in the next step.
 
-### Windows
-
-On Windows, open the `.netrc` file again in your user home directory:
+After registering, run the `ivert setup` command:
 
 ```bash
-notepad %USERPROFILE%\.netrc
+ivert setup
 ```
 
-Add the following entry, replacing `YOUR_USERNAME` and `YOUR_PASSWORD` with your NASA EarthData credentials. This can go immediately after your Copernicus Marine entry from above:
+At the `username:` and `password:` prompts, enter your NASA EarthData credentials. These credentials will be saved in your `.netrc` file, the same as your Copernicus Marine credentials were.
+
+Alternately, you can follow the same instructions as in the previous section and append your NASA EarthData credentials into your `.netrc` file manually, using this entry:
 
 ```text
 machine urs.earthdata.nasa.gov
@@ -191,23 +192,8 @@ login YOUR_USERNAME
 password YOUR_PASSWORD
 ```
 
-Save and close the file.
+This can go immediately after your Copernicus Marine entry from above.
 
-### macOS / Linux
-
-On macOS or Linux, create or edit the `.netrc` file in your home directory:
-
-```bash
-nano ~/.netrc
-```
-
-Add the following entry, replacing `YOUR_USERNAME` and `YOUR_PASSWORD` with your NASA EarthData credentials. This can go immediately after your Copernicus Marine entry from above:
-
-```text
-machine urs.earthdata.nasa.gov
-login YOUR_USERNAME
-password YOUR_PASSWORD
-```
 ---
 
 ## 7. Run Setup Checks
