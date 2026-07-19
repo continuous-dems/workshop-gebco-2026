@@ -119,7 +119,7 @@ ls ~/.ivert/icesat2/granules
 
 You should see `icesat2_granules_database.gpkg` alongside a `granules/` directory containing the classified `.nc` granules. IVERT is now ready to validate the Fiji DEM against this pre-loaded ICESat-2 data.
 
-> **Windows users:** If `wget` or `unzip` aren't available in your Miniforge Prompt, you can download the zip by pasting the URL above into a browser and then extract it into `%USERPROFILE%\.ivert\icesat2\` with File Explorer.
+> **Windows users:** If `wget` or `unzip` aren't available in your Miniforge Prompt, you can download the zip by pasting the URL above into a browser and then extract it into `%USERPROFILE%\.ivert\icesat2\` with File Explorer. You should see the files listed above.
 
 ### Validate Your DEM
 
