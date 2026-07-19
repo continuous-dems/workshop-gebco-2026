@@ -55,17 +55,18 @@ This confirms that the output is a valid raster and gives basic information abou
 
 ---
 
-## Create a Hillshade
+## Create a custom color shaded-relief map:
 
-Create a quick hillshade using `globato perspecto`:
+Inspect the default shaded-relief image in the "fiji_test" directory. Create a custom, color shaded-relief map by adjusting the parameters to `globato perspecto hillshade`:
 
 ```bash
-globato perspecto hillshade fiji_test_final.tif fiji_test_final_hs.tif
+globato perspecto hillshade --help
+
+globato perspecto hillshade --cmap etopo --exag 3 fiji_test_final.tif fiji_test_custom_hillshade.tif
+
 ```
 
-This creates a georeferenced hillshade that can be used for quick visual inspection.
-
----
+This creates a georeferenced, color shaded-relief map that can be reviewed without opening an external GIS application.
 
 ## Basic Visual Checks
 
