@@ -218,12 +218,6 @@ Expected:
 Python 3.12.x
 ```
 
-Check GDAL:
-
-```bash
-gdalinfo --version
-```
-
 Check the CUDEM tools:
 
 ```bash
@@ -241,4 +235,4 @@ If these commands print help text, the environment is ready for the Fiji test DE
 
 Once everyone has a working `cudem` environment, we will move to the Fiji test DEM exercise.
 
-The next module will use `globato` to run a small Fiji/Suva-area DEM workflow and generate a shared output that we can inspect together.
+The next module will use `globato` to run a test DEM workflow and generate a shared output that we can inspect together.
