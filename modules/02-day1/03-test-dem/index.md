@@ -106,7 +106,7 @@ Expected output DEM:
 fiji_test_final.tif
 ```
 
-Expected hillshade:
+Expected default shaded-relief map:
 
 ```text
 fiji_test_final_hs.tif
@@ -134,15 +134,18 @@ NoData value
 Minimum and maximum values
 ```
 
-## Create a Hillshade
+## Create a custom color shaded-relief map:
 
-Create a quick visual inspection product with:
+Inspect the default shaded-relief image in the "fiji_test" directory. Create a custom, color shaded-relief map by adjusting the parameters to `globato perspecto hillshade`:
 
 ```bash
-globato perspecto hillshade fiji_test_final.tif fiji_test_final_hs.tif
+globato perspecto hillshade --help
+
+globato perspecto hillshade --cmap etopo --exag 3 fiji_test_final.tif fiji_test_custom_hillshade.tif
+
 ```
 
-This creates a georeferenced hillshade that can be reviewed without opening an external GIS application.
+This creates a georeferenced, color shaded-relief map with the ETOPO color pallete applied. It is an easy way to review an output DEM without opening an external GIS application.
 
 ## Basic Visual Checks
 
