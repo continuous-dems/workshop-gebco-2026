@@ -97,4 +97,4 @@ The goals of this section are to:
 - Troubleshoot data-access or credential issues
 - Check basic raster metadata
 - Perform a quick visual review before opening the YAML recipe
-  
+
