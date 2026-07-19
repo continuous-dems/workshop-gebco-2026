@@ -154,7 +154,7 @@ This is an [HDF5](https://www.hdfgroup.org/solutions/hdf5/) database holding the
 
 #### 2. The summary statistics (`fiji_test_final_summary_stats.txt`)
 
-This is a plain-text file with some useful statistics describing the validation you just ran. Open it in a text editor and take a look. You'll see values like:
+This is a plain-text file with some useful statistics describing the validation you just ran. Open it in a text editor and take a look (or look at a sample [here](./fiji_test_final_summary_stats.txt)). You'll see values like:
 
 - The **number of DEM cells validated** and the total **number of ICESat-2 photons** used.
 - The **mean bias error** (DEM − ICESat-2), which tells you whether the DEM sits systematically too high or too low relative to ICESat-2.
