@@ -97,7 +97,7 @@ Download HTDP here:
 
 <https://github.com/noaa-ngs/HTDP/archive/refs/tags/v3.5.0.zip>
 
-Follow the HTDP installation instructions for your operating system.
+Follow the [HTDP installation instructions](https://transformez.readthedocs.io/en/latest/user_guide/installation.html#prerequisites-htdp) for your operating system.
 
 ---
 
