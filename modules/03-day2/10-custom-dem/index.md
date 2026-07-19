@@ -13,7 +13,7 @@ Choose a small coastal region and apply the same workflow pattern used for the F
 General command:
 
 ```bash
-globato cudem build -R WEST/EAST/SOUTH/NORTH -E 3s -O custom_test -P epsg:4326+3855 -X 0:5 global-bathy-topo --export
+globato cudem build -R WEST/EAST/SOUTH/NORTH -E 3s -O custom_test -P epsg:4326+3855 -M ms_binary_cudem:algos=interp_gmt -X 0:5 global-bathy-topo --export
 ```
 
 Replace:
@@ -24,10 +24,10 @@ WEST/EAST/SOUTH/NORTH
 
 with the selected coastal bounding box.
 
-Example using the Fiji region:
+Example centered on the Nukuʻalofa, Tonga region:
 
 ```bash
-globato cudem build -R 178.25/178.65/-18.30/-17.95 -E 3s -O custom_test -P epsg:4326+3855 -M ms_binary_cudem:algos=interp_gmt -X 0:5 global-bathy-topo --export
+globato cudem build -R -175.40/-175.00/-21.35/-21.00 -E 3s -O custom_test -P epsg:4326+3855 -M ms_binary_cudem:algos=interp_gmt -X 0:5 global-bathy-topo --export
 ```
 
 The `--export` option writes the generated YAML workflow to a recipe file instead of running the full DEM build.
@@ -66,16 +66,16 @@ Inspect the custom DEM the same way you inspected the Fiji output in the `globat
 gdalinfo custom_test_final.tif
 ```
 
-## Create a Hillshade
+## Create a color shaded-relief image:
 
 ```bash
-globato perspecto hillshade custom_test_final.tif custom_test_hillshade.tif
+globato perspecto hillshade --help
 ```
 
-Optional hillshade settings:
+Example hillshade command:
 
 ```bash
-globato perspecto hillshade custom_test_final.tif custom_test_hillshade.tif --cmap etopo --exag 3 --blend soft_light
+globato perspecto hillshade INPUT_DEM.tif OUTPUT_HILLSHADE.tif --cmap etopo --exag 3 
 ```
 
 ---
