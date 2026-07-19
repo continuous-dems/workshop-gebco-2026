@@ -30,7 +30,7 @@ By the end of Day 1, participants should have a working environment, a generated
 
 Day 2 begins with the final stage of the CUDEM workflow: validating the Fiji test DEM generated on Day 1 with `ivert`. We will run the Fiji validation workflow and examine the resulting statistics and plots. You will be able to re-run IVERT at any time when we explore deeper into the other data-discovery and DEM-creation modules.
 
-After the validating the test DEM, we will go through individual module excercises to explore the code enviroment in more depth. 
+After the validating the test DEM, we will go through individual module exercises to explore the code enviroment in more depth. 
 
 The afternoon will conclude with a custom DEM exercise. Participants will apply the same concepts to another coastal area, build a YAML recipe, run the workflow, and review the resulting outputs.
 
