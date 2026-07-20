@@ -16,7 +16,7 @@ By the end of Day 1, participants should have a working environment, a generated
 
 | Time | Topic | Description |
 |---|---|---|
-| 9:00–9:20 AM | Introductions and Workshop Overview | `fetchez`, `transformez`, `globato`, and `ivert` as parts of one CUDEM workflow. |
+| 9:00–9:20 AM | Introductions and Workshop Overview ([slides](https://github.com/continuous-dems/workshop-gebco-2026/releases/download/slide-decks-v1/CUDEM_Overview_GEBCO_Scholars_2026.07.20.pptx)) | `fetchez`, `transformez`, `globato`, and `ivert` as parts of one CUDEM workflow. |
 | 9:20–10:30 AM | Environment Setup | Set up a consistent `cudem` conda environment |
 | 10:30–11:00 AM | Installation Tests and Troubleshooting | Confirm that the main tools are installed and responding: `fetchez`, `transformez`, `globato`, and `ivert` |
 | 11:00–11:30 AM | Run the Fiji Test DEM | Run the test region to verify the environment |
