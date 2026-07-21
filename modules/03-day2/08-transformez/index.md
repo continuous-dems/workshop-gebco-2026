@@ -95,77 +95,72 @@ The shift grid represents the vertical correction required to move values from t
 
 ---
 
-## Apply a Vertical Shift to a Raster
+## Apply a Vertical Datum Transformation to a Raster
 
-Use `transformez raster` when you already have a DEM or raster and want to apply a vertical datum shift to it.
+Use `transformez raster` to apply a vertical datum shift to an existing DEM.
 
-Inspect the available options:
-
-```bash
-transformez raster --help
-```
-
-General command pattern:
+General pattern:
 
 ```bash
-transformez raster INPUT_DEM.tif -I INPUT_DATUM -O OUTPUT_DATUM -o output_dem.tif
+transformez raster INPUT_FILE -I INPUT_DATUM -O OUTPUT_DATUM [OPTIONS]
 ```
 
 Example:
 
 ```bash
-transformez raster fiji_test.tif -I mllw -O 3855 -o fiji_test_transformed.tif
+transformez raster input_dem.tif -I 3855 -O mhw --decay-pixels 0 -o output_dem.tif
 ```
 
-### Command Breakdown
+Command breakdown:
 
-| Command option | Purpose |
-|---|---|
-| `transformez raster` | Apply a vertical datum shift to an existing DEM |
-| `INPUT_DEM.tif` | Set the input raster |
-| `-I INPUT_DATUM` | Set the source or input vertical datum |
-| `-O OUTPUT_DATUM` | Set the target or output vertical datum |
-| `-o output_dem.tif` | Set the output transformed raster |
+- `transformez raster` — applies a vertical datum transformation to an existing raster.
+- `INPUT_FILE` — input DEM or raster file.
+- `-I 3855` — source vertical datum.
+- `-O mhw` — target vertical datum.
+- `--decay-pixels 0` — disables the inland decay of tidal transformation values.
+- `-o output_dem.tif` — specifies the output filename.
 
-Check the transformed raster:
+By default, tidal transformation values may decay toward zero over inland areas. Setting `--decay-pixels 0` preserves the transformation surface without applying the inland decay.
 
-```bash
-gdalinfo fiji_test_transformed.tif
-```
+Additional options:
 
-Useful checks include:
-
-- Coordinate reference system
-- Pixel size
-- Raster extent
-- NoData value
-- Minimum and maximum elevation values
-- Whether the output file opens successfully
+- `--in-units` — units of the input DEM: `auto`, `m`, `ft`, or `us-ft`.
+- `--out-units` — desired units of the output DEM.
+- `--use-stations` — use live tide-station values instead of global tidal models.
+- `--save-shift` — save the aligned vertical-shift grid alongside the output DEM.
 
 ---
 
+
 ## How `transformez` Connects to the Fiji Recipe
 
-In the Fiji workflow, reference information appears in the YAML recipe through settings such as:
+In the Fiji workflow, spatial reference information is defined in the YAML recipe through settings and hooks such as:
+
+- `region_srs`
+- `set-srs`
+- `stream_reproject`
+
+These settings tell the workflow:
+
+- The horizontal and vertical reference assigned to each source dataset
+- The target horizontal reference system
+- The target vertical datum of the final DEM
+- Which datasets require transformation before they can be combined
+
+Source-level preparation can be handled with CUDEM hooks. For example, `set-srs` assigns reference information to a dataset, while `stream_reproject` converts it into the target coordinate reference system.
+
+`transformez` handles the vertical relationship between the source and target datums. It can generate vertical shift grids or apply those shifts directly to rasters before the datasets are combined during DEM compilation.
+
+The general workflow is:
 
 ```text
-region_srs
-set-srs
-stream_reproject
+Assign source reference information
+→ Reproject source data horizontally
+→ Generate or apply the vertical datum shift
+→ Combine the harmonized datasets
+→ Build the final DEM
 ```
 
-These settings help the workflow understand:
-
-- The reference frame assigned to each source dataset
-- The target horizontal reference of the workflow
-- The target vertical reference of the final DEM
-- Which sources may require transformation before they can be combined
-
-Source-level preparation, including horizontal reprojection, can be handled through `fetchez` hooks such as `stream_reproject`.
-
-`transformez` focuses on the vertical relationship between the source and target references. It can create the vertical shift grids or transformed rasters needed to harmonize elevations and depths before DEM compilation.
-
-The key idea is that vertical transformation should be part of the reproducible workflow rather than an undocumented manual step performed after the DEM is created.
 
 ---
 
@@ -178,17 +173,14 @@ When using `transformez`, check:
 - Does the selected region cover the source dataset?
 - Is the output resolution appropriate?
 - Did the shift grid or transformed raster write successfully?
-- Can GDAL open the output?
 - Are the sign and magnitude of the vertical shift reasonable?
 - Does the selected vertical reference make sense for the intended DEM application?
-
-A technically successful command does not necessarily mean the correct datums were selected. The input and output reference assumptions should always be verified.
 
 ---
 
 ## Main Takeaway
 
-`transformez` makes vertical datum handling explicit and reproducible within CUDEM workflows.
+`transformez` makes vertical datum handling explicit and automated within CUDEM workflows.
 
 This is critical because vertical-reference mistakes can introduce significant offsets when combining topography, bathymetry, tidal datums, chart datums, and other elevation sources into a composite DEM.
 
