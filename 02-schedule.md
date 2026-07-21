@@ -40,7 +40,7 @@ By the end of Day 2, participants should understand how to validate a DEM with `
 
 | Time | Topic | Description |
 |---|---|---|
-| 9:00 AM–9:30 AM | Introduction to `ivert` | Review the purpose of independent DEM validation, required inputs, and expected outputs. |
+| 9:00 AM–9:30 AM | Introduction to `ivert` ([slides](https://github.com/continuous-dems/workshop-gebco-2026/releases/download/slide-decks-v1/IVERT_Intro_GEBCO_Scholars_2026.07.21.pptx)) | Review the purpose of independent DEM validation, required inputs, and expected outputs. |
 | 9:30 AM–10:20 AM | Fiji `ivert` Validation | Run the Fiji test DEM through the `ivert` validation workflow. Filter results. Learn how to set up custom validations in ivert. |
 | 10:20 AM–10:30 AM | Take a Break | Stretch legs, use the facilities. |
 | 10:30–11:00 AM | Data Discovery with `fetchez` | Review source modules, arguments, hooks, streams, and source-level preprocessing. |
