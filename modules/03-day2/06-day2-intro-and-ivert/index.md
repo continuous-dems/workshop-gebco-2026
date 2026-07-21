@@ -22,13 +22,27 @@ By the end of this section, participants should be able to:
 
 ---
 
-## Reactivate the CUDEM Environment
+## Reactivate the CUDEM Environment and Update IVERT
 
 Open a Miniforge Prompt or terminal and reactivate the workshop environment:
 
 ```bash
 conda activate cudem
 ```
+
+Before we begin today's tutorials, make sure you are running the latest version of IVERT. With the `cudem` environment active, update IVERT from conda-forge:
+
+```bash
+conda update -c conda-forge ivert
+```
+
+Then confirm the installed version:
+
+```bash
+ivert --version
+```
+
+This should report **version 0.6.6**. Once it does, you're ready to continue.
 
 Confirm that the main tools are available:
 
@@ -98,28 +112,40 @@ If you would like to build your own database over another region, follow the ins
 
 ### Install the Pre-Compiled Fiji Database
 
-Download the pre-compiled Fiji database from the workshop's GitHub release into your IVERT data directory:
+Download the pre-compiled Fiji database from the workshop's GitHub release into your IVERT data directory, unzip it in place, and confirm the files landed where IVERT expects them. This places the granules database (`icesat2_granules_database.gpkg`) and a `granules/` folder of classified ICESat-2 photon files directly into your IVERT `icesat2` directory. Follow the tab for your operating system:
+
+::::{tab-set}
+:::{tab-item} Windows
+
+In your **Miniforge Prompt**, download the zip, extract it, and list the results. Both `curl` and `tar` ship with Windows 10 and 11, so no extra tools are needed:
+
+```bat
+curl -L -o "%USERPROFILE%\.ivert\icesat2\ivert_granules_fiji.zip" https://github.com/continuous-dems/workshop-gebco-2026/releases/download/ivert-data-v1/ivert_granules_fiji.zip
+tar -xf "%USERPROFILE%\.ivert\icesat2\ivert_granules_fiji.zip" -C "%USERPROFILE%\.ivert\icesat2"
+dir "%USERPROFILE%\.ivert\icesat2"
+dir "%USERPROFILE%\.ivert\icesat2\granules"
+```
+
+The `-L` flag tells `curl` to follow GitHub's redirect to the actual download, and Windows' `tar` extracts `.zip` archives as well as `.tar` files.
+
+If `curl` is blocked on your network, paste the download URL from the command above into a web browser instead, then extract the downloaded zip into `%USERPROFILE%\.ivert\icesat2\` with File Explorer.
+
+:::
+:::{tab-item} Linux / macOS
+
+Download the zip, unzip it in place, and list the results:
 
 ```bash
 wget -P ~/.ivert/icesat2 https://github.com/continuous-dems/workshop-gebco-2026/releases/download/ivert-data-v1/ivert_granules_fiji.zip
-```
-
-Then unzip it in place:
-
-```bash
 unzip ~/.ivert/icesat2/ivert_granules_fiji.zip -d ~/.ivert/icesat2
-```
-
-This places the granules database (`icesat2_granules_database.gpkg`) and a `granules/` folder of classified ICESat-2 photon files directly into `~/.ivert/icesat2/`, where IVERT expects to find them. Confirm the files are in place:
-
-```bash
 ls ~/.ivert/icesat2
 ls ~/.ivert/icesat2/granules
 ```
 
-You should see `icesat2_granules_database.gpkg` alongside a `granules/` directory containing the classified `.nc` granules. IVERT is now ready to validate the Fiji DEM against this pre-loaded ICESat-2 data.
+:::
+::::
 
-> **Windows users:** If `wget` or `unzip` aren't available in your Miniforge Prompt, you can download the zip by pasting the URL above into a browser and then extract it into `%USERPROFILE%\.ivert\icesat2\` with File Explorer. You should see the files listed above.
+You should see `icesat2_granules_database.gpkg` alongside a `granules/` directory containing the classified `.nc` granules. IVERT is now ready to validate the Fiji DEM against this pre-loaded ICESat-2 data.
 
 ### Validate Your DEM
 
