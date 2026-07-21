@@ -202,6 +202,74 @@ This is what makes the workflow reproducible. The command defines the workflow, 
 
 ---
 
+# Add Local Data with `local_fs`
+
+The `local_fs` module searches a local directory for files that match a specified extension and adds them to the CUDEM workflow.
+
+Example for local GeoTIFF files:
+
+```text
+modules:
+  - module: local_fs
+    args:
+      path: /path/to/local/data
+      ext: .tif
+      datatype: raster
+      weight: 1.0
+      uncertainty: 0.0
+      use_cache: true
+```
+
+Example for local XYZ point data:
+
+```text
+modules:
+  - module: local_fs
+    args:
+      path: /path/to/local/xyz
+      ext: .xyz
+      datatype: xyz
+      weight: 1.0
+      use_cache: false
+```
+
+Hooks can be added to describe and prepare the local dataset before it enters the larger workflow:
+
+```text
+modules:
+  - module: local_fs
+    args:
+      path: /path/to/local/xyz
+      ext: .xyz
+      datatype: xyz
+      weight: 1.0
+      use_cache: false
+    hooks:
+      - name: set-srs
+        args:
+          srs: EPSG:4326+3855
+      - name: spatial_crop
+      - name: range_z
+        args:
+          max_z: -0.1
+```
+
+This allows local lidar, multibeam, chart soundings, XYZ files, rasters, or other project-specific datasets to be combined with the remote source modules already included in the exported recipe.
+
+General pattern:
+
+```text
+export recipe
+→ add local_fs module
+→ define local path and file type
+→ assign source reference information
+→ add optional filtering hooks
+→ run the modified recipe
+```
+
+
+---
+
 # Run a Saved YAML Recipe
 
 Once a recipe has been exported, use `globato cudem run` to execute it.
