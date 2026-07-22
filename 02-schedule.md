@@ -10,7 +10,7 @@ After setup, we will run a small test DEM. This gives everyone a concrete output
 
 The afternoon will focus on checking the DEM outputs and deconstructing the YAML workflow used to generate them. We will walk through the source modules, processing hooks, stacking steps, gridding/interpolation settings, and vertical reference assumptions so participants can see how a single recipe organizes the full DEM-building process.
 
-By the end of Day 1, participants should have a working environment, a generated test DEM, and a basic understanding of the CUDEM framework. 
+By the end of Day 1, participants should have a working environment, a generated test DEM, and a basic understanding of the CUDEM framework.
 
 ### Day 1 Agenda
 
@@ -30,7 +30,7 @@ By the end of Day 1, participants should have a working environment, a generated
 
 Day 2 begins with the final stage of the CUDEM workflow: validating the Fiji test DEM generated on Day 1 with `ivert`. We will run the Fiji validation workflow and examine the resulting statistics and plots. You will be able to re-run IVERT at any time when we explore deeper into the other data-discovery and DEM-creation modules.
 
-After the validating the test DEM, we will go through individual module excercises to explore the code enviroment in more depth. 
+After the validating the test DEM, we will go through individual module exercises to explore the code environment in more depth.
 
 The afternoon will conclude with a custom DEM exercise. Participants will apply the same concepts to another coastal area, build a YAML recipe, run the workflow, and review the resulting outputs.
 
